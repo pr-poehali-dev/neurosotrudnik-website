@@ -240,7 +240,7 @@ const Home = () => {
               </span>
             </div>
 
-            <h1 className="md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-tight break-words hyphens-auto text-3xl">
+            <h1 className="md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-tight break-words hyphens-auto text-2xl">
               Нейросотрудники для бизнеса
             </h1>
 
