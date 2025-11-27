@@ -44,9 +44,11 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Icon name="Brain" className="text-white" size={28} />
-            </div>
+            <img
+              src="https://cdn.poehali.dev/files/60d46518-6f62-4fb0-a1a0-d55ede05c2a7.png"
+              alt="neurosotrudnik.pro"
+              className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
+            />
             <div className="flex flex-col">
               <span className="text-xl font-display font-bold text-foreground">
                 neurosotrudnik

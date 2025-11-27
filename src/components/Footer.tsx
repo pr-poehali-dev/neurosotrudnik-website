@@ -28,9 +28,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Icon name="Brain" className="text-white" size={28} />
-              </div>
+              <img
+                src="https://cdn.poehali.dev/files/60d46518-6f62-4fb0-a1a0-d55ede05c2a7.png"
+                alt="neurosotrudnik.pro"
+                className="w-12 h-12 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-xl font-display font-bold text-foreground">
                   neurosotrudnik
