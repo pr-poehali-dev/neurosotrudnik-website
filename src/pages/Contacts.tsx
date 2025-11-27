@@ -6,45 +6,33 @@ const Contacts = () => {
     {
       icon: 'Phone',
       title: 'Телефон',
-      value: '+7 (495) 123-45-67',
-      link: 'tel:+74951234567',
+      value: '+7 (964) 138-13-88',
+      link: 'tel:+79641381388',
     },
     {
       icon: 'Mail',
       title: 'Email',
-      value: 'info@neurosotrudnik.pro',
-      link: 'mailto:info@neurosotrudnik.pro',
+      value: 'germesmen@gmail.com',
+      link: 'mailto:germesmen@gmail.com',
     },
     {
-      icon: 'MessageCircle',
-      title: 'Telegram',
-      value: '@neurosotrudnik',
-      link: '#',
-    },
-    {
-      icon: 'MessageSquare',
-      title: 'WhatsApp',
-      value: '+7 (495) 123-45-67',
+      icon: 'MapPin',
+      title: 'Адрес',
+      value: 'Рязань, ул. Михайловское шоссе д. 238а, оф. 315',
       link: '#',
     },
   ];
 
   const offices = [
     {
-      type: 'Юридический адрес',
-      address: '123456, Россия, г. Москва, ул. Примерная, д. 1, офис 100',
-    },
-    {
-      type: 'Фактический адрес',
-      address: '123456, Россия, г. Москва, ул. Рабочая, д. 5, офис 301',
+      type: 'Адрес офиса',
+      address: 'Россия, г. Рязань, ул. Михайловское шоссе д. 238а, оф. 315',
     },
   ];
 
   const socialLinks = [
-    { icon: 'MessageCircle', label: 'Telegram', href: '#' },
-    { icon: 'Phone', label: 'WhatsApp', href: '#' },
-    { icon: 'Instagram', label: 'Instagram', href: '#' },
-    { icon: 'Linkedin', label: 'LinkedIn', href: '#' },
+    { icon: 'MessageCircle', label: 'Telegram', href: 'https://t.me/germesmenrm' },
+    { icon: 'Users', label: 'ВКонтакте', href: 'https://vk.com/neurosotrudnik' },
   ];
 
   return (
@@ -166,18 +154,24 @@ const Contacts = () => {
               Свяжитесь с нами любым удобным способом, и мы ответим в течение 10 минут
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="tel:+74951234567">
+              <a href="tel:+79641381388">
                 <button className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:opacity-90 transition-opacity">
                   <Icon name="Phone" size={20} className="mr-2" />
                   Позвонить
                 </button>
               </a>
-              <a href="mailto:info@neurosotrudnik.pro">
+              <a href="mailto:germesmen@gmail.com">
                 <button className="inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-primary text-primary font-medium hover:bg-primary/10 transition-colors">
                   <Icon name="Mail" size={20} className="mr-2" />
                   Написать
                 </button>
               </a>
+            </div>
+            <div className="mt-6 pt-6 border-t border-border/50">
+              <p className="text-sm text-muted-foreground">
+                ИП Азолкина<br />
+                ИНН: 636204036604
+              </p>
             </div>
           </div>
         </div>

@@ -10,9 +10,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: 'MessageCircle', label: 'Telegram', href: '#' },
-    { icon: 'Phone', label: 'WhatsApp', href: '#' },
-    { icon: 'Mail', label: 'Email', href: 'mailto:info@neurosotrudnik.pro' },
+    { icon: 'MessageCircle', label: 'Telegram', href: 'https://t.me/germesmenrm' },
+    { icon: 'Users', label: 'ВКонтакте', href: 'https://vk.com/neurosotrudnik' },
+    { icon: 'Mail', label: 'Email', href: 'mailto:germesmen@gmail.com' },
   ];
 
   const quickLinks = [
@@ -73,17 +73,17 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-foreground mb-4">Контакты</h4>
             <ul className="space-y-2">
               <li className="text-sm text-muted-foreground">
-                <a href="tel:+74951234567" className="hover:text-primary transition-colors">
-                  +7 (495) 123-45-67
+                <a href="tel:+79641381388" className="hover:text-primary transition-colors">
+                  +7 (964) 138-13-88
                 </a>
               </li>
               <li className="text-sm text-muted-foreground">
-                <a href="mailto:info@neurosotrudnik.pro" className="hover:text-primary transition-colors">
-                  info@neurosotrudnik.pro
+                <a href="mailto:germesmen@gmail.com" className="hover:text-primary transition-colors">
+                  germesmen@gmail.com
                 </a>
               </li>
               <li className="text-sm text-muted-foreground">
-                Москва, Россия
+                Рязань, ул. Михайловское шоссе д. 238а, оф. 315
               </li>
             </ul>
           </div>
@@ -108,7 +108,8 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} neurosotrudnik.pro. Все права защищены.
+              © {new Date().getFullYear()} neurosotrudnik.pro. Все права защищены.<br />
+              ИП Азолкина, ИНН: 636204036604
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
