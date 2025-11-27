@@ -315,12 +315,16 @@ const Home = () => {
               { icon: 'BarChart', title: 'Аналитика', desc: 'Обработка данных и прогнозирование' },
             ].map((item, index) => (
               <Card key={index} className="border-border hover:border-primary/50 transition-all duration-300 group">
-                <CardContent className="p-6 space-y-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon name={item.icon} size={28} className="text-primary" />
+                <CardContent className="p-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Icon name={item.icon} size={24} className="text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -341,19 +345,23 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantages.map((advantage, index) => (
               <Card key={index} className="border-border hover:border-primary/50 transition-all duration-300 group">
-                <CardContent className="p-8 space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon name={advantage.icon} size={32} className="text-white" />
+                <CardContent className="p-5">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Icon name={advantage.icon} size={24} className="text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+                        {advantage.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {advantage.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-display font-semibold text-foreground">
-                    {advantage.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {advantage.description}
-                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -375,15 +383,19 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="border-border hover:border-primary/50 transition-all duration-300 group relative">
-                <CardContent className="p-6 space-y-4">
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-sm font-bold text-primary">{index + 1}</span>
+                <CardContent className="p-4">
+                  <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary">{index + 1}</span>
                   </div>
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon name={service.icon} size={28} className="text-primary" />
+                  <div className="flex items-start space-x-3 pr-8">
+                    <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Icon name={service.icon} size={22} className="text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-semibold text-foreground mb-1">{service.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground pr-8">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
