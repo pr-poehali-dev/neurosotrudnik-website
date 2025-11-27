@@ -73,25 +73,7 @@ const Contacts = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {offices.map((office, index) => (
-              <Card key={index} className="border-border">
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <Icon name="MapPin" size={24} className="text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-foreground mb-2">
-                        {office.type}
-                      </h3>
-                      <p className="text-muted-foreground">{office.address}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+
 
           <Card className="border-border mb-12">
             <CardContent className="p-8">
