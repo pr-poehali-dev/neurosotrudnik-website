@@ -117,6 +117,35 @@ const Contacts = () => {
             </CardContent>
           </Card>
 
+          <Card className="border-border overflow-hidden">
+            <div className="h-96 bg-muted relative">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=37.617644%2C55.755819&z=12&l=map"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="w-full h-full"
+                title="Карта"
+              />
+            </div>
+            <CardContent className="p-8">
+              <div className="flex items-start space-x-4">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
+                  <Icon name="Navigation" size={24} className="text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    Как нас найти
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Офис находится в центре Москвы, в пешей доступности от метро.
+                    Встречи проводим по предварительной записи.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 text-center">
             <h3 className="text-2xl font-display font-bold text-foreground mb-4">
               Готовы обсудить ваш проект?
