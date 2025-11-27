@@ -11,19 +11,57 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const Home = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    businessType: '',
-    comment: '',
+    message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/f2599053-9d89-4c7a-b36e-535536298e3a', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: 'Мы свяжемся с вами в течение 10 минут',
+        });
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      } else {
+        throw new Error(data.error || 'Ошибка отправки');
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось отправить заявку. Попробуйте позже.',
+        variant: 'destructive',
+      });
+      console.error('Form error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const advantages = [
@@ -511,23 +549,14 @@ const Home = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="businessType">Тип бизнеса</Label>
-                    <Input
-                      id="businessType"
-                      placeholder="E-commerce, B2B, услуги..."
-                      value={formData.businessType}
-                      onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="comment">Комментарий</Label>
+                    <Label htmlFor="message">Сообщение *</Label>
                     <Textarea
-                      id="comment"
+                      id="message"
                       placeholder="Расскажите о вашей задаче..."
                       rows={4}
-                      value={formData.comment}
-                      onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
                     />
                   </div>
 
@@ -535,8 +564,9 @@ const Home = () => {
                     type="submit"
                     size="lg"
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90"
+                    disabled={isSubmitting}
                   >
-                    Отправить заявку
+                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                     <Icon name="Send" size={20} className="ml-2" />
                   </Button>
 
