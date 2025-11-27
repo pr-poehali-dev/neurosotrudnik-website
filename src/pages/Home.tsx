@@ -167,18 +167,21 @@ const Home = () => {
       company: 'CEO, TechStore.ru',
       text: 'Внедрили нейросотрудника в интернет-магазин электроники. Конверсия выросла на 42%, а нагрузка на менеджеров снизилась вдвое. Окупилось за полтора месяца.',
       rating: 5,
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alexander',
     },
     {
       name: 'Мария Соколова',
       company: 'Основатель, Школа английского "Fluent"',
       text: 'Нейроассистент обрабатывает заявки студентов, отвечает на вопросы по программам и помогает с записью. Освободил 15 часов в неделю для команды.',
       rating: 5,
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria',
     },
     {
       name: 'Дмитрий Волков',
       company: 'Директор по продажам, CloudSolutions',
       text: 'Автоматизировали первичную квалификацию лидов. Нейросотрудник обрабатывает 200+ обращений в день и передает готовых клиентов менеджерам. Качество лидов выросло на 35%.',
       rating: 5,
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Dmitry',
     },
   ];
 
@@ -485,9 +488,16 @@ const Home = () => {
                   <p className="text-muted-foreground italic leading-relaxed">
                     "{testimonial.text}"
                   </p>
-                  <div className="pt-4 border-t border-border">
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                  <div className="flex items-center gap-4 pt-4 border-t border-border">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full bg-muted"
+                    />
+                    <div>
+                      <p className="font-semibold text-foreground">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
